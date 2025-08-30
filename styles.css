@@ -66,10 +66,23 @@ body {
 
 /* Page Layout */
 .page {
-  min-height: auto;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 4px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: #172339;
+}
+
+/* Card Container */
+.card-container {
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 450px;
+  width: 100%;
+  text-align: center;
+  position: relative;
 }
 
 /* Header Styles */
@@ -77,7 +90,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 4px 0;
+  padding: 0 0 20px 0;
   position: relative;
 }
 
@@ -87,6 +100,7 @@ header {
   border-radius: 12px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
+  margin-bottom: 20px;
 }
 
 .logo:hover {
@@ -98,24 +112,23 @@ header {
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px;
 }
 
 .back-button {
   position: absolute;
   right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 0;
   background: rgba(255, 255, 255, 0.1);
   border: 2px solid rgba(255, 255, 255, 0.2);
   color: #fdfdfb;
-  padding: 0.75rem 1.5rem;
+  padding: 8px 12px;
   border-radius: 8px;
   font-family: 'ExpoArabic', sans-serif;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -126,7 +139,7 @@ header {
 .back-button:focus {
   background: rgba(255, 255, 255, 0.2);
   border-color: rgba(255, 255, 255, 0.4);
-  transform: translateY(-50%) translateX(4px);
+  transform: translateX(4px);
   outline: none;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
@@ -137,15 +150,16 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 4px 0;
+  padding: 0;
 }
 
 .button-container {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 18px;
   width: 100%;
   max-width: 400px;
+  margin-bottom: 25px;
 }
 
 .products-container {
@@ -156,7 +170,8 @@ header {
 .product-group {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 15px;
+  margin-bottom: 25px;
 }
 
 /* Button Styles */
@@ -232,7 +247,13 @@ header {
 /* Responsive Design */
 @media (max-width: 768px) {
   .page {
-    padding: 8px;
+    padding: 15px;
+  }
+
+  .card-container {
+    padding: 25px;
+    max-width: 400px;
+    border-radius: 16px;
   }
 
   header {
@@ -241,10 +262,12 @@ header {
 
   .logo {
     max-width: 250px;
+    margin-bottom: 15px;
   }
 
   .logo-small {
     max-width: 150px;
+    margin-bottom: 15px;
   }
 
   .payment-button,
@@ -277,15 +300,23 @@ header {
 
 @media (max-width: 480px) {
   .page {
-    padding: 4px;
+    padding: 10px;
+  }
+
+  .card-container {
+    padding: 20px;
+    max-width: 350px;
+    border-radius: 12px;
   }
 
   .logo {
     max-width: 200px;
+    margin-bottom: 12px;
   }
 
   .logo-small {
     max-width: 120px;
+    margin-bottom: 12px;
   }
 
   .payment-button,
@@ -469,12 +500,15 @@ header {
   }
 }
 
-/* Contact Footer */
+/* Contact Footer - Outside Card */
 .contact-footer {
-  margin-top: 8px;
-  padding: 8px 16px 8px 16px;
+  margin-top: 30px;
+  padding: 20px 0;
   position: relative;
   overflow: hidden;
+  border-radius: 16px;
+  max-width: 450px;
+  width: 100%;
 }
 
 .contact-container {
@@ -524,7 +558,6 @@ header {
   font-size: 0.85rem;
   font-weight: 500;
   transition: all 0.3s ease;
-  backdrop-filter: blur(15px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
@@ -651,8 +684,9 @@ header {
 /* Responsive Contact */
 @media (max-width: 768px) {
   .contact-footer {
-    margin-top: 2rem;
-    padding: 2rem 1rem 1.5rem 1rem;
+    margin-top: 25px;
+    padding: 18px 15px;
+    border-radius: 12px;
   }
 
   .contact-title {
@@ -689,8 +723,9 @@ header {
 
 @media (max-width: 480px) {
   .contact-footer {
-    margin-top: 1.5rem;
-    padding: 1.5rem 0.75rem 1rem 0.75rem;
+    margin-top: 20px;
+    padding: 15px 12px;
+    border-radius: 10px;
   }
 
   .contact-container {
@@ -730,8 +765,16 @@ header {
   }
 }
 
-/* Powered by Easykash */
+/* Powered by Easykash - Inside Card */
 .powered-by {
+  text-align: center;
+  padding: 15px 0 0 0;
+  margin-top: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Powered by Easykash - Standalone (for outside card) */
+.powered-by-standalone {
   text-align: center;
   padding: 8px 0;
   margin-top: 8px;
